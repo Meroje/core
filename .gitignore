@@ -1,3 +1,5 @@
-
+vendor
+fuel-core
+packages
 .sass-cache
 hooks/build.js
