@@ -53,7 +53,7 @@ class Date extends \Fuel\Core\Date
         $timestamp = strtotime($modify, $this->timestamp);
 
         if ($timestamp === false) {
-            \Error::notice('Invalid input for modify given.');
+            \ApplicationError::notice('Invalid input for modify given.');
             return false;
         } else {
             $this->timestamp = $timestamp;

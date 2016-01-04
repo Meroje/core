@@ -169,13 +169,13 @@ class Fieldset extends \Fuel\Core\Fieldset
 
         // Check if it exists already, if so: return and give notice
         if ($existing = static::field($name)) {
-            \Error::notice('Field with this name "'.$name.'" exists already, cannot be overwritten through add().');
+            \ApplicationError::notice('Field with this name "'.$name.'" exists already, cannot be overwritten through add().');
             return $existing;
         }
 
         // Make sure fieldset is current
         if ($field->fieldset() != $this) {
-            \Error::notice('A field added through add() must have the correct parent fieldset.');
+            \ApplicationError::notice('A field added through add() must have the correct parent fieldset.');
             return false;
         }
         $this->fields[$name] = $field;
